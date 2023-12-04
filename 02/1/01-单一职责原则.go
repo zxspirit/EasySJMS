@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-type ClothesShop struct {}
+type ClothesShop struct{}
 
 func (cs *ClothesShop) OnShop() {
 	fmt.Println("休闲的装扮")
 }
 
-type ClothesWork struct {}
+type ClothesWork struct{}
 
 func (cw *ClothesWork) OnWork() {
 	fmt.Println("工作的装扮")
@@ -23,5 +23,3 @@ func main() {
 	cs := new(ClothesShop)
 	cs.OnShop()
 }
-
-

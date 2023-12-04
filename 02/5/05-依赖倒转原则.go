@@ -16,7 +16,7 @@ type BenZ struct {
 	//...
 }
 
-func (benz * BenZ) Run() {
+func (benz *BenZ) Run() {
 	fmt.Println("Benz is running...")
 }
 
@@ -24,7 +24,7 @@ type Bmw struct {
 	//...
 }
 
-func (bmw * Bmw) Run() {
+func (bmw *Bmw) Run() {
 	fmt.Println("Bmw is running...")
 }
 
@@ -34,7 +34,7 @@ type Zhang_3 struct {
 
 func (zhang3 *Zhang_3) Drive(car Car) {
 	fmt.Println("Zhang3 drive car")
-	car.Run()//多态
+	car.Run() //多态
 }
 
 type Li_4 struct {
@@ -45,7 +45,6 @@ func (li4 *Li_4) Drive(car Car) {
 	fmt.Println("li4 drive car")
 	car.Run()
 }
-
 
 // ===== >   业务逻辑层  < ========
 func main() {

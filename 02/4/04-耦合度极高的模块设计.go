@@ -3,21 +3,20 @@ package main
 import "fmt"
 
 // === > 奔驰汽车 <===
-type Benz struct {}
+type Benz struct{}
 
 func (this *Benz) Run() {
 	fmt.Println("Benz is running...")
 }
 
 // === > 宝马汽车  <===
-type BMW struct {}
+type BMW struct{}
 
 func (this *BMW) Run() {
 	fmt.Println("BMW is running ...")
 }
 
-
-//===> 司机张三  <===
+// ===> 司机张三  <===
 type Zhang3 struct {
 	//...
 }
@@ -32,7 +31,7 @@ func (zhang3 *Zhang3) DriveBMW(bmw *BMW) {
 	bmw.Run()
 }
 
-//===> 司机李四 <===
+// ===> 司机李四 <===
 type Li4 struct {
 	//...
 }

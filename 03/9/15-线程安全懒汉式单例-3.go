@@ -7,13 +7,13 @@ import (
 
 var once sync.Once
 
-type singelton struct {}
+type singelton struct{}
 
 var instance *singelton
 
 func GetInstance() *singelton {
 
-	once.Do(func(){
+	once.Do(func() {
 		instance = new(singelton)
 	})
 

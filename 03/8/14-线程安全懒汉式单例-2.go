@@ -6,11 +6,11 @@ import (
 	"sync/atomic"
 )
 
-//标记
+// 标记
 var initialized uint32
 var lock sync.Mutex
 
-type singelton struct {}
+type singelton struct{}
 
 var instance *singelton
 
@@ -41,4 +41,3 @@ func main() {
 	s := GetInstance()
 	s.SomeThing()
 }
-

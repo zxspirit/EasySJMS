@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Cooker struct {}
+type Cooker struct{}
 
 func (c *Cooker) MakeChicken() {
 	fmt.Println("烤串师傅烤了鸡肉串儿")
@@ -12,11 +12,10 @@ func (c *Cooker) MakeChuaner() {
 	fmt.Println("烤串师傅烤了羊肉串儿")
 }
 
-//抽象的命令
+// 抽象的命令
 type Command interface {
 	Make()
 }
-
 
 type CommandCookChicken struct {
 	cooker *Cooker
@@ -47,7 +46,6 @@ func (w *WaiterMM) Notify() {
 		cmd.Make()
 	}
 }
-
 
 func main() {
 	cooker := new(Cooker)

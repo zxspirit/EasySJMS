@@ -4,14 +4,15 @@ import "fmt"
 
 // ======= 抽象层 =========
 
-//水果类(抽象接口)
+// 水果类(抽象接口)
 type Fruit interface {
-	Show()	 //接口的某方法
+	Show() //接口的某方法
 }
+
 // ======= 基础类模块 =========
 
 type Apple struct {
-	Fruit  //为了易于理解显示继承(此行可以省略)
+	Fruit //为了易于理解显示继承(此行可以省略)
 }
 
 func (apple *Apple) Show() {
@@ -35,7 +36,6 @@ func (pear *Pear) Show() {
 }
 
 type Peach struct {
-
 }
 
 func (peach *Peach) Show() {
@@ -43,8 +43,8 @@ func (peach *Peach) Show() {
 }
 
 // ========= 工厂模块  =========
-//一个工厂， 有一个生产水果的机器，返回一个抽象水果的指针
-type Factory struct {}
+// 一个工厂， 有一个生产水果的机器，返回一个抽象水果的指针
+type Factory struct{}
 
 func (fac *Factory) CreateFruit(kind string) Fruit {
 	var fruit Fruit
@@ -61,7 +61,6 @@ func (fac *Factory) CreateFruit(kind string) Fruit {
 
 	return fruit
 }
-
 
 // ==========业务逻辑层==============
 func main() {

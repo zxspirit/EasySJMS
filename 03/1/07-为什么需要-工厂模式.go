@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//水果类
+// 水果类
 type Fruit struct {
 	//...
 	//...
@@ -19,7 +19,7 @@ func (f *Fruit) Show(name string) {
 	}
 }
 
-//创建一个Fruit对象
+// 创建一个Fruit对象
 func NewFruit(name string) *Fruit {
 	fruit := new(Fruit)
 
@@ -44,4 +44,3 @@ func main() {
 	pear := NewFruit("pear")
 	pear.Show("pear")
 }
-
