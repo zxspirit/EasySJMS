@@ -2,31 +2,31 @@ package main
 
 import "fmt"
 
-type SubSystemA struct {}
+type SubSystemA struct{}
 
 func (sa *SubSystemA) MethodA() {
 	fmt.Println("子系统方法A")
 }
 
-type SubSystemB struct {}
+type SubSystemB struct{}
 
 func (sb *SubSystemB) MethodB() {
 	fmt.Println("子系统方法B")
 }
 
-type SubSystemC struct {}
+type SubSystemC struct{}
 
 func (sc *SubSystemC) MethodC() {
 	fmt.Println("子系统方法C")
 }
 
-type SubSystemD struct {}
+type SubSystemD struct{}
 
 func (sd *SubSystemD) MethodD() {
 	fmt.Println("子系统方法D")
 }
 
-//外观模式，提供了一个外观类， 简化成一个简单的接口供使用
+// 外观模式，提供了一个外观类， 简化成一个简单的接口供使用
 type Facade struct {
 	a *SubSystemA
 	b *SubSystemB
@@ -39,7 +39,6 @@ func (f *Facade) MethodOne() {
 	f.b.MethodB()
 }
 
-
 func (f *Facade) MethodTwo() {
 	f.c.MethodC()
 	f.d.MethodD()
@@ -51,7 +50,6 @@ func main() {
 	sa.MethodA()
 	sb := new(SubSystemB)
 	sb.MethodB()
-
 
 	fmt.Println("-----------")
 	//使用外观模式

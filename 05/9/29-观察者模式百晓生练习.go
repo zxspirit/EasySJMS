@@ -11,12 +11,11 @@ import "fmt"
 */
 
 const (
-	PGaiBang string = "丐帮"
+	PGaiBang  string = "丐帮"
 	PMingJiao string = "明教"
 )
 
-
-//-------- 抽象层 -------
+// -------- 抽象层 -------
 type Listener interface {
 	//当同伴被揍了该怎么办
 	OnFriendBeFight(event *Event)
@@ -35,22 +34,21 @@ type Notifier interface {
 }
 
 type Event struct {
-	Noti Notifier //被知晓的通知者
-	One Listener  //事件主动发出者
+	Noti    Notifier //被知晓的通知者
+	One     Listener //事件主动发出者
 	Another Listener //时间被动接收者
-	Msg string		//具体消息
+	Msg     string   //具体消息
 }
 
-
-//-------- 实现层 -------
-//英雄(Listener)
+// -------- 实现层 -------
+// 英雄(Listener)
 type Hero struct {
-	Name string
+	Name  string
 	Party string
 }
 
 func (hero *Hero) Fight(another Listener, baixiao Notifier) {
-	msg := fmt.Sprintf("%s 将 %s 揍了...", hero.Title(), another.Title(),)
+	msg := fmt.Sprintf("%s 将 %s 揍了...", hero.Title(), another.Title())
 
 	//生成事件
 	event := new(Event)
@@ -94,18 +92,17 @@ func (hero *Hero) GetParty() string {
 	return hero.Party
 }
 
-
-//百晓生(Nofifier)
+// 百晓生(Nofifier)
 type BaiXiao struct {
 	heroList []Listener
 }
 
-//添加观察者
+// 添加观察者
 func (b *BaiXiao) AddListener(listener Listener) {
 	b.heroList = append(b.heroList, listener)
 }
 
-//删除观察者
+// 删除观察者
 func (b *BaiXiao) RemoveListener(listener Listener) {
 	for index, l := range b.heroList {
 		//找到要删除的元素位置
@@ -117,7 +114,7 @@ func (b *BaiXiao) RemoveListener(listener Listener) {
 	}
 }
 
-//通知广播
+// 通知广播
 func (b *BaiXiao) Notify(event *Event) {
 	fmt.Println("【世界消息】 百晓生广播消息: ", event.Msg)
 	for _, listener := range b.heroList {

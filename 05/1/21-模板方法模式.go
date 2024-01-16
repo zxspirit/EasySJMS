@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//抽象类，制作饮料,包裹一个模板的全部实现步骤
+// 抽象类，制作饮料,包裹一个模板的全部实现步骤
 type Beverage interface {
 	BoilWater() //煮开水
 	Brew()      //冲泡
@@ -12,12 +12,12 @@ type Beverage interface {
 	WantAddThings() bool //是否加入酌料Hook
 }
 
-//封装一套流程模板，让具体的制作流程继承且实现
+// 封装一套流程模板，让具体的制作流程继承且实现
 type template struct {
 	b Beverage
 }
 
-//封装的固定模板
+// 封装的固定模板
 func (t *template) MakeBeverage() {
 	if t == nil {
 		return
@@ -33,10 +33,9 @@ func (t *template) MakeBeverage() {
 	}
 }
 
-
-//具体的模板子类 制作咖啡
+// 具体的模板子类 制作咖啡
 type MakeCaffee struct {
-	template  //继承模板
+	template //继承模板
 }
 
 func NewMakeCaffee() *MakeCaffee {
@@ -67,9 +66,9 @@ func (mc *MakeCaffee) WantAddThings() bool {
 	return true //启动Hook条件
 }
 
-//具体的模板子类 制作茶
+// 具体的模板子类 制作茶
 type MakeTea struct {
-	template  //继承模板
+	template //继承模板
 }
 
 func NewMakeTea() *MakeTea {

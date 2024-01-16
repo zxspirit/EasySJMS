@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type singelton struct {}
+type singelton struct{}
 
 var instance *singelton
 

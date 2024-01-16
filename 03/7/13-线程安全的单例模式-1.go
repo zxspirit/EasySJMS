@@ -5,10 +5,10 @@ import (
 	"sync"
 )
 
-//定义锁
+// 定义锁
 var lock sync.Mutex
 
-type singelton struct {}
+type singelton struct{}
 
 var instance *singelton
 
@@ -26,7 +26,6 @@ func GetInstance() *singelton {
 func (s *singelton) SomeThing() {
 	fmt.Println("单例对象的某方法")
 }
-
 
 func main() {
 	s := GetInstance()

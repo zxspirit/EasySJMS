@@ -4,9 +4,9 @@ import "fmt"
 
 //--------- 抽象层 --------
 
-//抽象的观察者
+// 抽象的观察者
 type Listener interface {
-	OnTeacherComming()	 //观察者得到通知后要触发的动作
+	OnTeacherComming() //观察者得到通知后要触发的动作
 }
 
 type Notifier interface {
@@ -15,8 +15,8 @@ type Notifier interface {
 	Notify()
 }
 
-//--------- 实现层 --------
-//观察者学生
+// --------- 实现层 --------
+// 观察者学生
 type StuZhang3 struct {
 	Badthing string
 }
@@ -53,8 +53,7 @@ func (s *StuWang5) DoBadthing() {
 	fmt.Println("王5 正在", s.Badthing)
 }
 
-
-//通知者班长
+// 通知者班长
 type ClassMonitor struct {
 	listenerList []Listener //需要通知的全部观察者集合
 }
@@ -74,13 +73,12 @@ func (m *ClassMonitor) RemoveListener(listener Listener) {
 	}
 }
 
-func (m* ClassMonitor) Notify() {
+func (m *ClassMonitor) Notify() {
 	for _, listener := range m.listenerList {
 		//依次调用全部观察的具体动作
 		listener.OnTeacherComming()
 	}
 }
-
 
 func main() {
 	s1 := &StuZhang3{

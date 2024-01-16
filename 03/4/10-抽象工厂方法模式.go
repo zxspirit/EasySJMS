@@ -16,10 +16,9 @@ type AbstractPear interface {
 }
 
 type AbstractPeach interface {
-
 }
 
-//抽象工厂
+// 抽象工厂
 type AbstractFactory interface {
 	CreateApple() AbstractApple
 	CreateBanana() AbstractBanana
@@ -28,25 +27,25 @@ type AbstractFactory interface {
 
 // ======== 实现层 =========
 /*  中国产品族 */
-type ChinaApple struct {}
+type ChinaApple struct{}
 
 func (ca *ChinaApple) ShowApple() {
 	fmt.Println("中国苹果")
 }
 
-type ChinaBanana struct {}
+type ChinaBanana struct{}
 
 func (cb *ChinaBanana) ShowBanana() {
 	fmt.Println("中国香蕉")
 }
 
-type ChinaPear struct {}
+type ChinaPear struct{}
 
 func (cp *ChinaPear) ShowPear() {
 	fmt.Println("中国梨")
 }
 
-type ChinaFactory struct {}
+type ChinaFactory struct{}
 
 func (cf *ChinaFactory) CreateApple() AbstractApple {
 	var apple AbstractApple
@@ -73,25 +72,25 @@ func (cf *ChinaFactory) CreatePear() AbstractPear {
 }
 
 /*  日本产品族 */
-type JapanApple struct {}
+type JapanApple struct{}
 
 func (ja *JapanApple) ShowApple() {
 	fmt.Println("日本苹果")
 }
 
-type JapanBanana struct {}
+type JapanBanana struct{}
 
 func (jb *JapanBanana) ShowBanana() {
 	fmt.Println("日本香蕉")
 }
 
-type JapanPear struct {}
+type JapanPear struct{}
 
 func (cp *JapanPear) ShowPear() {
 	fmt.Println("日本梨")
 }
 
-type JapanFactory struct {}
+type JapanFactory struct{}
 
 func (jf *JapanFactory) CreateApple() AbstractApple {
 	var apple AbstractApple
@@ -118,25 +117,25 @@ func (cf *JapanFactory) CreatePear() AbstractPear {
 }
 
 /*  美国产品族 */
-type AmericanApple struct {}
+type AmericanApple struct{}
 
 func (aa *AmericanApple) ShowApple() {
 	fmt.Println("美国苹果")
 }
 
-type AmericanBanana struct {}
+type AmericanBanana struct{}
 
 func (ab *AmericanBanana) ShowBanana() {
 	fmt.Println("美国香蕉")
 }
 
-type AmericanPear struct {}
+type AmericanPear struct{}
 
 func (ap *AmericanPear) ShowPear() {
 	fmt.Println("美国梨")
 }
 
-type AmericanFactory struct {}
+type AmericanFactory struct{}
 
 func (af *AmericanFactory) CreateApple() AbstractApple {
 	var apple AbstractApple

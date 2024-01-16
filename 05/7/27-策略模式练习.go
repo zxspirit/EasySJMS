@@ -5,22 +5,22 @@ import "fmt"
 /*
 	练习：
 	商场促销有策略A（0.8折）策略B（消费满200，返现100），用策略模式模拟场景
- */
+*/
 
-//销售策略
+// 销售策略
 type SellStrategy interface {
 	//根据原价得到售卖价
-	GetPrice(price float64)	 float64
+	GetPrice(price float64) float64
 }
 
-type StrategyA struct {}
+type StrategyA struct{}
 
 func (sa *StrategyA) GetPrice(price float64) float64 {
 	fmt.Println("执行策略A, 所有商品打八折")
-	return price * 0.8;
+	return price * 0.8
 }
 
-type StrategyB struct {}
+type StrategyB struct{}
 
 func (sb *StrategyB) GetPrice(price float64) float64 {
 	fmt.Println("执行策略B, 所有商品满200 减100")
@@ -29,12 +29,12 @@ func (sb *StrategyB) GetPrice(price float64) float64 {
 		price -= 100
 	}
 
-	return price;
+	return price
 }
 
-//环境类
+// 环境类
 type Goods struct {
-	Price float64
+	Price    float64
 	Strategy SellStrategy
 }
 
@@ -43,7 +43,7 @@ func (g *Goods) SetStrategy(s SellStrategy) {
 }
 
 func (g *Goods) SellPrice() float64 {
-	fmt.Println("原价值 ", g.Price , " .")
+	fmt.Println("原价值 ", g.Price, " .")
 	return g.Strategy.GetPrice(g.Price)
 }
 
